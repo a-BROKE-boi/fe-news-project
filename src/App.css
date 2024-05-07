@@ -5,6 +5,22 @@
   text-align: center;
 }
 
-.headerbox {
-  background-color: rebeccapurple;
+.headerBox {
+  color: aqua;
+}
+
+.articleList {
+  background-color: rgb(150, 150, 150);
+  border-radius: 1cm;
+}
+
+li {
+  list-style-type: none;
+}
+
+h2 {
+}
+
+.articleTopic {
+  position: left;
 }
