@@ -1,24 +1,28 @@
 #root {
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  margin: 1rem;
+  padding: 1rem;
 }
 
 .headerBox {
   color: aqua;
+  text-align: center;
 }
 
 .articleList {
   background-color: rgb(150, 150, 150);
   border-radius: 1cm;
+  text-align: left;
+  margin: 1cm;
+  padding: 2rem;
 }
 
 li {
   list-style-type: none;
 }
 
-h2 {
+.articleTopic {
+  text-align: right;
 }
 
 .articleTopic {

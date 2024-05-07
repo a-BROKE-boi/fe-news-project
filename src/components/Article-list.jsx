@@ -21,15 +21,16 @@ export default function ArticleList() {
           console.log(article);
           return (
             <li key={article.title} className="articleList">
-              <h2>{article.title}</h2>
-              <h3 className="articleTopic">{article.topic}</h3>
+              <h2 className="articleTitle">{article.title}</h2>
+              <h3 className="articleTopic">topic: {article.topic}</h3>
               <img
                 src={article.article_img_url}
                 alt={article.title}
                 style={{ width: "150px", height: "150px" }}
               ></img>
-              <p>{article.votes}</p>
+              <p>Votes: {article.votes}</p>
               <p>Author: {article.author}</p>
+              <p>Date published: {article.created_at.slice(0, 10)}</p>
             </li>
           );
         })}
