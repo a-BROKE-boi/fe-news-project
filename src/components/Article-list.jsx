@@ -18,7 +18,6 @@ export default function ArticleList() {
     <>
       <ul>
         {articles.map((article) => {
-          console.log(article);
           return (
             <li key={article.title} className="articleList">
               <h2 className="articleTitle">{article.title}</h2>
