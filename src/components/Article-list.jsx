@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function ArticleList() {
   const [articles, setArticles] = useState([]);
@@ -6,7 +7,6 @@ export default function ArticleList() {
   useEffect(() => {
     fetch("https://news-api-project-ek66.onrender.com/api/articles")
       .then((response) => {
-        console.log(response);
         return response.json();
       })
       .then((data) => {
@@ -19,8 +19,12 @@ export default function ArticleList() {
       <ul>
         {articles.map((article) => {
           return (
-            <li key={article.title} className="articleList">
-              <h2 className="articleTitle">{article.title}</h2>
+            <li key={article.article_id} className="articleList">
+              <h2 className="articleTitle">
+                <Link to={`/article/${article.article_id}`}>
+                  {article.title}
+                </Link>
+              </h2>
               <h3 className="articleTopic">topic: {article.topic}</h3>
               <img
                 src={article.article_img_url}
