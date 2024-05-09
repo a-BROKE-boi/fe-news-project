@@ -48,7 +48,15 @@ img {
 .articleBox {
   background-color: rgb(31, 31, 31);
   border-radius: 1cm;
+  margin: 0.5cm;
+  padding: 1rem;
+}
 
-  margin: 1cm;
+/* comments */
+.commentList {
+  background-color: rgb(32, 32, 32);
+  border-radius: 0.5cm;
+
+  margin: 0.5cm;
   padding: 2rem;
 }

@@ -4,6 +4,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Comments from "./Comments";
 
 export default function Article() {
   const [article, setArticle] = useState([]);
@@ -15,19 +16,21 @@ export default function Article() {
         `https://news-api-project-ek66.onrender.com/api/articles/${article_id}`
       )
       .then((response) => {
-        console.log(response.data.article);
         setArticle(response.data.article);
       });
   }, []);
 
   return (
-    <div className="articleBox">
-      <h2>{article.title}</h2>
-      <img src={article.article_img_url}></img>
-      <p>{article.body}</p>
-      <h3>Votes: {article.votes}</h3>
-      <h3>Author: {article.author}</h3>
-      <p>Date published: {article.created_at}</p>
-    </div>
+    <>
+      <div className="articleBox">
+        <h2>{article.title}</h2>
+        <img src={article.article_img_url}></img>
+        <p>{article.body}</p>
+        <h3>Votes: {article.votes}</h3>
+        <h3>Author: {article.author}</h3>
+        <p>Date published: {article.created_at}</p>
+      </div>
+      <Comments />
+    </>
   );
 }
