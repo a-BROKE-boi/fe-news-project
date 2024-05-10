@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import axios from "axios";
+import CommentVote from "./Comment-vote";
 
 export default function Comments() {
   const [comments, setComments] = useState([]);
@@ -25,8 +26,8 @@ export default function Comments() {
           <li key={comment.comment_id} className="commentList">
             <p>{comment.author}</p>
             <p>{comment.body}</p>
-            <p>made at: {comment.created_at.slice(0, 10)}</p>
-            <p>votes: {comment.votes}</p>
+            <p>Made at: {comment.created_at.slice(0, 10)}</p>
+            <CommentVote votes={comment.votes} />
           </li>
         );
       })}
